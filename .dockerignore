@@ -1,0 +1,8 @@
+.dockerignore
+.gitignore
+Dockerfile
+kubernetes.yaml
+app/__pycache__
+tests/
+*.sql
+*.sh
