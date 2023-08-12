@@ -1,14 +1,14 @@
 USE quotes_db;
 
--- CREATE TABLE trotsky(
---     id INTEGER NOT NULL AUTO_INCREMENT
---     ,author VARCHAR(16)
---     ,quote VARCHAR(2048)
---     ,source VARCHAR(128)
---     ,topic VARCHAR(64)
---     ,year SMALLINT
---     , PRIMARY KEY (id)
--- );
+CREATE TABLE trotsky(
+    id INTEGER NOT NULL AUTO_INCREMENT
+    ,author VARCHAR(16)
+    ,quote VARCHAR(2048)
+    ,source VARCHAR(128)
+    ,topic VARCHAR(64)
+    ,year SMALLINT
+    , PRIMARY KEY (id)
+);
 
 INSERT INTO trotsky (author,quote,source,topic,year) VALUES ('Leon Trotsky','Only for its own purposes did the strike allow itself to break the vow of immobility. When it needed news bulletins of the revolution it opened a printing works; it used the telegraph to send out strike instructions; it let trains carrying strikers’ delegates pass.  Nothing else was exempt: the strike closed down industrial plants, chemists’ and grocers’ shops, courts of law, everything.  From time to time its attention wearied and its vigilance slackened, now here, now there. Sometimes a reckless train would break through the strike barrier: then the strike would set off in pursuit of it. The guilty train, like a criminal on the run, raced through dark and empty stations, unannounced by the telegraph, leaving a wake of fear and uncertainty behind it. But in the end the strike would catch up with the train, stop the engine, immobilize the driver, let off the steam.  It used every possible means. It appealed, convinced, implored; it begged on its knees—that is what a woman orator did at the Kursky Station in Moscow—it threatened, terrorized, threw stones, finally fired off its Brownings. It wanted to achieve its aim at whatever cost. It staked too much: the blood of fathers, the bread of children, the reputation of its own strength. An entire class obeyed it; and when a negligible fraction of that class, corrupted by the very forces it was fighting, stood in its path, it is scarcely surprising that the strike roughly kicked the obstacle aside.','Chapter 7 of 1905','On Strikes',1907);
 INSERT INTO trotsky (author,quote,source,topic,year) VALUES ('Leon Trotsky','As a general rule, the party does not make a decision on every isolated strike. It helps le trade union to decide the question of knowing if the strike is opportune, by means of its political and economic information and by its advice. It serves the strike with its agitation, etc. First place in the strike belongs, of course to the trade union.','Communism and Syndicalism','On Strikes',1931);

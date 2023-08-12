@@ -1,13 +1,13 @@
 USE quotes_db;
 
--- CREATE TABLE engels(
---     id INTEGER NOT NULL AUTO_INCREMENT
---     ,author VARCHAR(16)
---     ,quote VARCHAR(2048)
---     ,source VARCHAR(128)
---     ,year SMALLINT
---     , PRIMARY KEY (id)
--- );
+CREATE TABLE engels(
+    id INTEGER NOT NULL AUTO_INCREMENT
+    ,author VARCHAR(16)
+    ,quote VARCHAR(2048)
+    ,source VARCHAR(128)
+    ,year SMALLINT
+    , PRIMARY KEY (id)
+);
 
 INSERT INTO engels (author,quote,source,year) VALUES ('Friedrich Engels','What is genuine is proved in the fire, what is false we shall not miss in our ranks. The opponents must grant us that youth has never before flocked to our colours in such numbers, ... in the end, one will be found among us who will prove that the sword of enthusiasm is just as good as the sword of genius.','Anti-Schelling',1841);
 INSERT INTO engels (author,quote,source,year) VALUES ('Friedrich Engels','Political economy came into being as a natural result of the expansion of trade, and with its appearance elementary, unscientific huckstering was replaced by a developed system of licensed fraud, an entire science of enrichment.','Outlines of Political Economy',1844);

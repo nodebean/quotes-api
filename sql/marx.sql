@@ -1,13 +1,13 @@
 USE quotes_db;
 
--- CREATE TABLE marx(
---     id INTEGER NOT NULL AUTO_INCREMENT
---     ,author VARCHAR(16)
---     ,quote VARCHAR(2048)
---     ,source VARCHAR(128)
---     ,year SMALLINT
---     , PRIMARY KEY (id)
--- );
+CREATE TABLE marx(
+    id INTEGER NOT NULL AUTO_INCREMENT
+    ,author VARCHAR(16)
+    ,quote VARCHAR(2048)
+    ,source VARCHAR(128)
+    ,year SMALLINT
+    , PRIMARY KEY (id)
+);
 
 INSERT INTO marx (author,quote,source,year) VALUES ('Karl Marx','If we have chosen the position in life in which we can most of all work for mankind, no burdens can bow us down, because they are sacrifices for the benefit of all; then we shall experience no petty, limited, selfish joy, but our happiness will belong to millions, our deeds will live on quietly but perpetually at work, and over our ashes will be shed the hot tears of noble people.','Reflections of a Young Man',1835);
 INSERT INTO marx (author,quote,source,year) VALUES ('Karl Marx','History calls those men the greatest who have ennobled themselves by working for the common good; experience acclaims as happiest the man who has made the greatest number of people happy.','Reflections of a Young Man',1835);

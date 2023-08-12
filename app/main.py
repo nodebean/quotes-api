@@ -129,9 +129,9 @@ def get_random_fml():
     
     dom = etree.HTML(str(soup))
     
-    resp_fml_text = dom.xpath('//*[@id="main"]/div[3]/div/div[1]/article[1]/a/text()')[0]
-    resp_your_life_sucks = dom.xpath('//*[@id="main"]/div[3]/div/div[1]/article[1]/div[2]/div[1]/span[2]/text()[1]')
-    resp_you_deserved_it = dom.xpath('//*[@id="main"]/div[3]/div/div[1]/article[1]/div[2]/div[2]/span[2]/text()[1]')
+    resp_fml_text = dom.xpath('//*[@id="content"]/div/div[1]/article[1]/a/text()')[0]
+    resp_your_life_sucks = dom.xpath('//*[@id="content"]/div/div[1]/article[1]/div[2]/div[1]/span[2]/text()')
+    resp_you_deserved_it = dom.xpath('//*[@id="content"]/div/div[1]/article[1]/div[2]/div[2]/span[2]/text()')
 
     fml_text = resp_fml_text.replace("\n","")
     your_life_sucks = resp_your_life_sucks[0].replace(' ',',')
