@@ -27,3 +27,10 @@ class QuoteTrotsky(QuoteBase):
     year: int
     class Config:
         orm_mode = True
+
+class QuoteTpb(QuoteBase):
+    id: int
+    author: str
+    quote: str
+    class Config:
+        orm_mode = True
