@@ -27,3 +27,9 @@ class Trotsky(Base):
     source = Column(String(128))
     topic = Column(String(64))
     year = Column(Integer)
+
+class Tpb(Base):
+    __tablename__ = "tpb"
+    id = Column(Integer, primary_key=True, index=True)
+    author = Column(String(16))
+    quote = Column(String(2048))

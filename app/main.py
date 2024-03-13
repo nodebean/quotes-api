@@ -5,6 +5,7 @@ from random import randint
 from bs4 import BeautifulSoup
 from lxml import etree
 import requests
+import random
 
 
 from . import crud, models, schemas
@@ -111,6 +112,55 @@ def get_random_trotsky_quote(db: Session = Depends(get_db)):
 def get_trotsky_quote_count(db: Session = Depends(get_db)):
     trotsky_quote_count = crud.get_trotsky_quotes_count(db)
     return {"count": trotsky_quote_count}
+
+#TPB
+@app.get("/api/tpb/all", response_model=List[schemas.QuoteTpb])
+def get_all_tpb_quotes(skip: int = 0, limit: int = 255, db: Session = Depends(get_db)):
+    tpb_quotes = crud.get_tpb_quotes_all(db, skip=skip, limit=limit)
+    return tpb_quotes
+
+@app.get("/api/tpb/id/{id}", response_model=schemas.QuoteTpb)
+def get_tpb_quote_by_id(id: int, db: Session = Depends(get_db)):
+    tpb_quote = crud.get_tpb_quote_by_id(db, id=id)
+    if tpb_quote is None:
+        raise HTTPException(status_code=404, detail="Quote Not Found")
+    return tpb_quote
+
+@app.get("/api/tpb/random", response_model=schemas.QuoteTpb)
+def get_random_tpb_quote(db: Session = Depends(get_db)):
+    tpb_quote_count = crud.get_tpb_quotes_count(db)
+    id = randint(1, tpb_quote_count)
+    tpb_quote = crud.get_tpb_quote_by_id(db, id)    
+    return tpb_quote
+
+@app.get("/api/tpb/count")
+def get_tpb_quote_count(db: Session = Depends(get_db)):
+    tpb_quote_count = crud.get_tpb_quotes_count(db)
+    return {"count": tpb_quote_count}
+
+@app.get("/api/tpb/ricky")
+def get_ricky_quote(db: Session = Depends(get_db)):
+    ricky_quotes = crud.get_tpb_quote_named(db, author="Ricky")
+    ricky_quote = random.choice(ricky_quotes)
+    return ricky_quote
+
+@app.get("/api/tpb/bubbles")
+def get_bubbles_quote(db: Session = Depends(get_db)):
+    bubbles_quotes = crud.get_tpb_quote_named(db, author="Bubbles")
+    bubbles_quote = random.choice(bubbles_quotes)
+    return bubbles_quote
+
+@app.get("/api/tpb/lahey")
+def get_lahey_quote(db: Session = Depends(get_db)):
+    lahey_quotes = crud.get_tpb_quote_named(db, author="Lahey")
+    lahey_quote = random.choice(lahey_quotes)
+    return lahey_quote
+
+@app.get("/api/tpb/jroc")
+def get_jroc_quote(db: Session = Depends(get_db)):
+    jroc_quotes = crud.get_tpb_quote_named(db, author="J-Roc")
+    jroc_quote = random.choice(jroc_quotes)
+    return jroc_quote
 
 #FML
 @app.get('/api/fml/random')
