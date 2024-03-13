@@ -10,7 +10,7 @@ class Quote(QuoteBase):
     author: str
     quote: str
     source: str
-    year: str
+    year: int
     class Config:
         orm_mode = True
 
@@ -24,6 +24,6 @@ class QuoteTrotsky(QuoteBase):
     quote: str
     source: str
     topic: str
-    year: str
+    year: int
     class Config:
         orm_mode = True
