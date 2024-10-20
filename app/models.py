@@ -33,3 +33,9 @@ class Tpb(Base):
     id = Column(Integer, primary_key=True, index=True)
     author = Column(String(16))
     quote = Column(String(2048))
+
+class Hicks(Base):
+    __tablename__ = "billhicks"
+    id = Column(Integer, primary_key=True, index=True)
+    author = Column(String(16))
+    quote = Column(String(2048))

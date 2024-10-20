@@ -34,3 +34,10 @@ class QuoteTpb(QuoteBase):
     quote: str
     class Config:
         orm_mode = True
+
+class QuoteHicks(QuoteBase):
+    id: int
+    author: str
+    quote: str
+    class Config:
+        orm_mode = True
