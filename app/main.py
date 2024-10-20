@@ -162,6 +162,31 @@ def get_jroc_quote(db: Session = Depends(get_db)):
     jroc_quote = random.choice(jroc_quotes)
     return jroc_quote
 
+# Bill Hicks
+@app.get("/api/hicks/all", response_model=List[schemas.QuoteHicks])
+def get_all_hicks_quotes(skip: int = 0, limit: int = 255, db: Session = Depends(get_db)):
+    hicks_quotes = crud.get_hicks_quotes_all(db, skip=skip, limit=limit)
+    return hicks_quotes
+
+@app.get("/api/hicks/id/{id}", response_model=schemas.QuoteHicks)
+def get_hicks_quote_by_id(id: int, db: Session = Depends(get_db)):
+    hicks_quote = crud.get_hicks_quote_by_id(db, id=id)
+    if hicks_quote is None:
+        raise HTTPException(status_code=404, detail="Quote Not Found")
+    return hicks_quote
+
+@app.get("/api/hicks/random", response_model=schemas.QuoteHicks)
+def get_random_hicks_quote(db: Session = Depends(get_db)):
+    hicks_quote_count = crud.get_hicks_quotes_count(db)
+    id = randint(1, hicks_quote_count)
+    hicks_quote = crud.get_hicks_quote_by_id(db, id)    
+    return hicks_quote
+
+@app.get("/api/hicks/count")
+def get_hicks_quote_count(db: Session = Depends(get_db)):
+    hicks_quote_count = crud.get_hicks_quotes_count(db)
+    return {"count": hicks_quote_count}
+
 #FML
 @app.get('/api/fml/random')
 def get_random_fml():
