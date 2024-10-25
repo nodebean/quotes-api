@@ -5,7 +5,7 @@ import os
 
 DATABASE_URL = os.environ['FAST_API_MYSQL']
 
-engine = create_engine(DATABASE_URL
+engine = create_engine(DATABASE_URL,
     pool_size=10,          # Adjust based on load
     max_overflow=20,       # Max extra connections
     pool_recycle=28000,    # Recycle connections within MySQL's timeout
